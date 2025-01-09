@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     Scanner in = new Scanner(System.in);
+     
+     int n = in.nextInt();
+     
+     int orinal_num = n;
+     int cnt=0,sum = 0;
+     
+     while(n != 0)
+     {
+       cnt ++;
+       n = n/10;
+     }
+      n= orinal_num;
+     while(n!=0)
+     {
+       int rem = n%10;
+       sum+= Math.pow(rem,cnt);
+       n=n/10;
+     }
+     
+     
+     if(orinal_num == sum)
+      System.out.println("ArmStrong Number.");
+      
+    else 
+      System.out.println("Not ArmStrong Number.");
+      
+    }
+}
