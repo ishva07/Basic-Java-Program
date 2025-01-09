@@ -1,0 +1,36 @@
+//Program to find prime factors of a number
+/*
+  Input: 24
+  Output: 2 2 2 3
+*/
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     Scanner in = new Scanner(System.in);
+     
+     int n = in.nextInt();
+     
+    primeFactor(n);
+  }
+  
+  public static void primeFactor(int n){
+    //calculate even prime factor by making number odd 
+    while(n %2 ==0){
+      System.out.println(2 + " ");
+      n = n/2;
+    }
+    
+    //check for all odd factor
+    for(int i = 3; i <= Math.sqrt(n); i= i+2){
+      while(n % i == 0){
+        System.out.println(i);
+        n = n/i;
+      }
+    }
+    // handle num which are divisible only by 1 and it's own (23,31,37,61)
+    if(n > 2)
+      System.out.println(n);
+      
+  }
+}
