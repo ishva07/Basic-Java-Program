@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     Scanner in = new Scanner(System.in);
+     
+     int start = in.nextInt();
+     int end = in.nextInt();
+      Boolean ans;
+    for(int i =start; i<= end; i++){
+      ans = checkArmstrog(i);
+      if(ans)
+        System.out.println(i);
+     }     
+    }
+    //Check Weather given num is armstrong or not
+  //======================================
+    public static Boolean checkArmstrog(int n){
+     int orinal_num = n;
+     int cnt=0,sum = 0;
+     
+     while(n != 0)
+     {
+       cnt ++;
+       n = n/10;
+     }
+     
+     n= orinal_num;
+     while(n!=0)
+     {
+       int rem = n%10;
+       sum+= Math.pow(rem,cnt);
+       n=n/10;
+     }
+     
+     if(orinal_num == sum)
+      return true;
+      
+    else 
+      return false;
+      
+    }
+}
