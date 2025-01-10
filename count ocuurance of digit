@@ -1,0 +1,40 @@
+/*
+STDIN
+1122845
+
+Output:
+
+count of 1 : 2
+count of 2 : 2
+count of 3 : 0
+count of 4 : 1
+count of 5 : 1
+count of 6 : 0
+count of 7 : 0
+count of 8 : 1
+count of 9 : 0
+*/
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      
+      int original_num = n;
+      
+      for(int i =1; i<=9; i++){
+        int cnt = 0;
+        n= original_num;
+        
+        while(n > 0){
+          if(i == (n%10))
+            cnt ++;
+          n = n/10;
+        }
+        System.out.println("count of "+i+" : " +cnt);
+      }
+     
+  }
+}
